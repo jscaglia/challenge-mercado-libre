@@ -1,0 +1,29 @@
+<div class="grid-10" id="detailContainer" *ngIf="initialized">
+  <app-breadcrumbs class="span-10"></app-breadcrumbs>
+  
+  <mat-card *ngIf="itemSelected" class="product-detail span-10 grid-10">
+    <div class="product-image">
+      <img [src]="itemSelected.pictures[0].secure_url">
+    </div>
+
+    <div class="product-info">
+      <div class="product-status">
+        {{ itemSelected.condition }} - {{ itemSelected.sold_quantity }} vendidos
+      </div>
+      <div class="product-name">
+        {{ itemSelected.title }}
+      </div>
+      <div class="product-price">
+        $ {{ itemPrice.integer }}<span class="cents">{{ itemPrice.fraction }}</span>
+      </div>
+      <button mat-raised-button class="buy-button" color="primary">Comprar</button>
+    </div>
+
+    <div class="product-description">
+      <h1 class="description-title">Descripción del producto</h1>
+      <p class="description-text" *ngFor="let attribute of itemSelected.attributes">
+        <b>{{attribute.name}}: </b> {{attribute.value_name}}
+      </p>
+    </div>
+  </mat-card>
+</div>

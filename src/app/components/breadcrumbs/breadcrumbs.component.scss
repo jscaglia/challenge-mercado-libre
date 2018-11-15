@@ -1,0 +1,27 @@
+@import "../../../assets/styles/size.scss";
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/fonts.scss";
+
+:host {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	font-size: 14px;
+}
+
+.breadcrumb-item {
+	display: inline;
+	padding-left: 3%;
+	
+	&-text {
+		display: inline;
+		font-family: $base-font-stack;
+		color: $dark-gray;
+	}
+
+	&-link:any-link {
+		display: inline;
+		font-family: $base-font-stack;
+		color: $dark-gray;
+		text-decoration: none;
+	}
+}

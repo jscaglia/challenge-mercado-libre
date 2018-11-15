@@ -1,0 +1,8 @@
+<div class="input-group search-box-container" id="search-box">
+  <input id="search-input" type="text" class="form-control" placeholder="Nunca dejes de buscar" [(ngModel)]="someToFind" (keydown)="goToSearch($event)">
+  <div class="input-group-prepend" [routerLink]="['/items']" [queryParams]="{search: someToFind}" routerLinkActive="router-link-active" >
+    <span class="input-group-text" >
+      <i class="search-icon" id="search-icon"></i>
+    </span>
+  </div>
+</div>

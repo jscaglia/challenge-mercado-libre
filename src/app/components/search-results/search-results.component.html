@@ -1,0 +1,31 @@
+<div class="grid-10" id="searchResult">
+    <app-breadcrumbs class="span-10"></app-breadcrumbs>
+    <mat-card *ngIf="resultList.length" class="result-list span-10" id="productsCard">
+        <div *ngFor="let item of resultList | slice:0:4;" class="result">
+            <div class="product">
+                <div class="product-thumbnail">
+                    <img [src]="item.thumbnail" />
+                </div>
+
+                <div class="product-data">
+                    <div class="product-price">
+                        <a class="price-tag" [routerLink]="['/items', item.id]">
+                            {{ getFormattedPrice( item.price ) }}
+                        </a>
+                        <span *ngIf="item.shipping.free_shipping">
+                            <img [src]="'../../../assets/styles/icons/shipping.png'" />
+                        </span>
+                    </div>
+
+                    <p class="product-name">
+                        {{ item.title }}
+                    </p>
+
+                    <div class="product-location-state">
+                        {{item.address.state_name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

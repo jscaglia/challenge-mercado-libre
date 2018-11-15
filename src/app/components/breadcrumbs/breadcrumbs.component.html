@@ -1,0 +1,19 @@
+<span class="breadcrumb-item" *ngFor="let item of breadcrumbItems">
+	<span class="separator" *ngIf="! isFirstItem( item )">
+		&gt;
+	</span>
+	<span
+		*ngIf="( item.url === undefined ) || isLastItem( item )"
+		class="breadcrumb-item-text"
+		[style.fontWeight]="isLastItem( item ) ? 'bold' : 'normal'"
+	>
+		{{ item.text }}
+	</span>
+	<a
+		*ngIf="( item.url !== undefined ) && ( ! isLastItem( item ) )"
+		class="breadcrumb-item-link"
+		[routerLink]="item.url"
+	>
+		{{ item.text }}
+	</a>
+</span>

@@ -1,0 +1,18 @@
+@import "colors.scss";
+@import "size.scss";
+@import "grid-10.scss";
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100%;
+
+    // Override Bootstrap's default
+    background-color: $ligth-gray !important;
+}
+
+app-root {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}

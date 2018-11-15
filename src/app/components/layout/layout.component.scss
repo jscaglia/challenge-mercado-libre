@@ -1,0 +1,9 @@
+@import "../../../assets/styles/size.scss";
+@import "../../../assets/styles/colors.scss";
+
+app-header {
+    display: block;
+    position: relative;
+    height: $header-heigth;
+    z-index: 999;
+}
